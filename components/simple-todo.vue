@@ -39,11 +39,11 @@
           >
             <p>{{ todo.text }}</p>
             <div class="todoItemButtonsContainer">
-              <button @click="deleteFavTodo(todo)">
+              <button @click="removeFavTodo(todo)">
                 <img src="src/assets/delete-outline-24-px-1.svg" alt="" />
               </button>
               <button
-                @click="removeFromFavTodo(todo)"
+                @click="moveFromFavTodo(todo)"
                 class="removeFromFavButton"
               >
                 Remove from Fav
@@ -84,11 +84,11 @@ export default {
     addFavTodo(favTodo) {
       store.commit("addFavTodo", favTodo);
     },
-    removeFromFavTodo(favTodo) {
-      store.commit("removeFromFavTodo", favTodo);
+    moveFromFavTodo(favTodo) {
+      store.commit("moveFromFavTodo", favTodo);
     },
-    deleteFavTodo(favTodo) {
-      store.commit("deleteFavTodo", favTodo);
+    removeFavTodo(favTodo) {
+      store.commit("removeFavTodo", favTodo);
     },
     fetchCatFacts() {
       store.commit("fetchCatFacts", this.factsNo);

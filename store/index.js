@@ -20,11 +20,11 @@ export default new Vuex.Store({
 			state.todos = state.todos.filter(todo => todo !== favTodo)
 			state.favoriteTodos.push(favTodo)
 		},
-		removeFromFavTodo(state, favTodo){
+		moveFromFavTodo(state, favTodo){
 			state.favoriteTodos = state.favoriteTodos.filter(todo => todo !== favTodo)
 			state.todos.push(favTodo)
 		},
-		deleteFavTodo(state, favTodo){
+		removeFavTodo(state, favTodo){
 			state.favoriteTodos.splice(state.favoriteTodos.indexOf(favTodo), 1)
 		},
 		fetchCatFacts(state, factsNo) {
