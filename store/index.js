@@ -31,9 +31,7 @@ export default new Vuex.Store({
 			fetch(`https://cat-fact.herokuapp.com/facts/random?amount=${factsNo}`)
 				.then(response => {
 					response.json().then(data => {
-						console.log(state.todos.concat(data))
 						state.todos = state.todos.concat(data)
-						console.log(state.todos)
 					})
 				})
 		}
