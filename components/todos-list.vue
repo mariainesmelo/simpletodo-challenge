@@ -1,17 +1,4 @@
 <template>
-  <div class="todoContainer">
-    <div class="inputButtons">
-      <form @submit.prevent="addTodo">
-        <p>What do you have to do?</p>
-        <input type="text" placeholder="Type here" v-model="text" />
-        <button>Add Todo</button>
-      </form>
-      <form @submit.prevent="fetchCatFacts">
-        <p>Find some cool cats facts!</p>
-        <input type="number" placeholder="Number of facts" v-model="factsNo" />
-        <button>Cats Facts</button>
-      </form>
-    </div>
     <div class="todoListContainer">
       <div class="listSpace">
         <ul>
@@ -53,7 +40,6 @@
         </ul>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -64,20 +50,15 @@ export default {
     return {
       text: "",
       factsNo: 5,
-      favOnes: this.text,
     };
   },
 
   computed: {
     todos: () => store.state.todos,
     favoriteTodos: () => store.state.favoriteTodos,
-    catsFacts: () => store.state.catsFacts,
+
   },
   methods: {
-    addTodo() {
-      store.commit("addTodo", this.text);
-      this.text = "";
-    },
     removeTodo(id) {
       store.commit("removeTodo", id);
     },
@@ -89,12 +70,7 @@ export default {
     },
     removeFavTodo(favTodo) {
       store.commit("removeFavTodo", favTodo);
-    },
-    fetchCatFacts() {
-      store.commit("fetchCatFacts", this.factsNo);
-    },
+    }
   },
 };
 </script>
-
-

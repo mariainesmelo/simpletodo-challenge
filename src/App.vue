@@ -4,18 +4,22 @@
       <img src="./assets/logo.png" />
       <h1>{{ msg }}</h1>
     </div>
-    <simpletodo></simpletodo>
+    <todosinput></todosinput>
+    <todoslist></todoslist>
   </div>
 </template>
 
 <script>
-import simpletodo from "../components/simple-todo.vue";
+import todosinput from "../components/todos-input.vue";
+import todoslist from "../components/todos-list.vue";
+import "./App.css";
 
 export default {
   name: "app",
 
   components: {
-    simpletodo,
+    todosinput,
+    todoslist
   },
 
   data() {
@@ -26,160 +30,3 @@ export default {
 };
 </script>
 
-<style>
-body {
-  background-color: #f9f9f9;
-}
-
-/* App styles */
-
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 0;
-}
-
-a {
-  color: #42b983;
-}
-
-h1 {
-  font-weight: normal;
-}
-
-h1 > a {
-  color: inherit;
-  text-decoration: none;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li > div {
-  margin-top: 10px;
-}
-
-.navBar {
-  display: flex;
-  background-color: white;
-  padding-top: 20px;
-}
-
-.navBar img {
-  width: 60px;
-  height: 60px;
-  margin-left: 170px;
-}
-
-/* Simple-todo styles */
-.todoContainer {
-  display: flex;
-  flex-direction: column;
-}
-
-.inputButtons {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 120px;
-  font-size: 18px;
-  margin-left: 170px;
-  margin-right: 170px;
-}
-
-.inputButtons p {
-  text-align: start;
-  font-size: 20px;
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-}
-
-.inputButtons input {
-  border: none;
-  height: 48px;
-  width: 380px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-  text-align: center;
-}
-
-.inputButtons button {
-  margin-left: 0;
-  height: 48px;
-  width: 194px;
-  border: none;
-  background-color: #44d7b6;
-  color: white;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3),
-    -1px 2px 4px 0 rgba(51, 51, 51, 0.1);
-  font-weight: 900;
-}
-
-.todoListContainer {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 60px;
-  margin-left: 170px;
-  margin-right: 170px;
-}
-
-.listSpace {
-  width: 45%;
-}
-
-h2 {
-  font-size: 24px;
-  font-weight: 900;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  text-align: start;
-}
-
-.todoItem {
-  display: flex;
-  justify-content: space-between;
-  min-height: 60px;
-  background-color: white;
-  border-radius: 10px;
-  margin-top: 24px;
-  font-size: 20px;
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  padding-left: 24px;
-  padding-right: 24px;
-}
-
-.todoItem p {
-  vertical-align: center;
-}
-.todoItemButtonsContainer {
-  display: flex;
-  margin-top: 0;
-}
-
-.todoItemButtonsContainer button {
-  border: none;
-  background-color: transparent;
-}
-
-.removeFromFavButton {
-  border: 2px solid #44d7b6 !important;
-  border-radius: 10px;
-  color: #44d7b6;
-  height: 32px;
-  align-self: center;
-  width: 148px;
-}
-</style>

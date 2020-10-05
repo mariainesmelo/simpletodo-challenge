@@ -47,7 +47,7 @@ body {
     margin-left: 170px;
   }
   
-  /* Simple-todo styles */
+  /* todos-input styles */
   .todoContainer {
     display: flex;
     flex-direction: column;
@@ -95,6 +95,8 @@ body {
     font-weight: 900;
   }
   
+  /* todos-list styles */
+
   .todoListContainer {
     display: flex;
     justify-content: space-between;
