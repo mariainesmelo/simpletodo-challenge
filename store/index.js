@@ -13,11 +13,19 @@ export default new Vuex.Store({
 		addTodo(state, text) {
 			state.todos.push({ text })
 		},
-		removeTodo(state, todo) {
+		removeTodo(state, todo,) {
 			state.todos.splice(state.todos.indexOf(todo), 1)
 		},
-		favTodo(state, favOnes) {
-			state.favoriteTodos.push(favOnes)
+		addFavTodo(state, favTodo) {
+			state.todos = state.todos.filter(todo => todo !== favTodo)
+			state.favoriteTodos.push(favTodo)
+		},
+		removeFromFavTodo(state, favTodo){
+			state.favoriteTodos = state.favoriteTodos.filter(todo => todo !== favTodo)
+			state.todos.push(favTodo)
+		},
+		deleteFavTodo(state, favTodo){
+			state.favoriteTodos.splice(state.favoriteTodos.indexOf(favTodo), 1)
 		},
 		fetchCatFacts(state, factsNo) {
 			fetch(`https://cat-fact.herokuapp.com/facts/random?amount=${factsNo}`)
@@ -25,8 +33,6 @@ export default new Vuex.Store({
 					response.json().then(data => {
 						console.log(state.todos.concat(data))
 						state.todos = state.todos.concat(data)
-						// state.catsFacts = data
-						// console.log(state.catsFacts);
 						console.log(state.todos)
 					})
 				})
